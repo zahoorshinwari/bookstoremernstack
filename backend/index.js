@@ -13,7 +13,13 @@ app.use(express.json())
 
 // Middleware for handling cors policy
 // option 1: allow all origins with default cors(*)
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://deploy-lwhq.vercel.app"],
+        methods: ['POST', 'GET'],
+        credentials: true
+    }
+));
 // option 2: allow custom origins
 // app.use(
 //     cors({
